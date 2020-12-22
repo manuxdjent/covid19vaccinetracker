@@ -1,0 +1,32 @@
+.phaseCard {
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    margin: 20px;
+}
+
+.ant-card-head-title:before {
+    content: '# ';
+}
+
+.preClinical .ant-card-body {
+    background-color: rgb(255 0 0 / 35%);
+}
+
+.phase1 .ant-card-body {
+    background-color: rgb(255 82 0 / 35%);
+}
+
+.phase12 .ant-card-body {
+    background-color: rgb(255 153 0 / 35%);
+}
+
+.phase2 .ant-card-body {
+    background-color: rgb(251 255 0 / 35%);
+}
+
+.phase23 .ant-card-body {
+    background-color: rgb(122 255 0 / 35%);
+}
+
+.phase3 .ant-card-body {
+    background-color: rgb(0 255 67 / 35%);
+}

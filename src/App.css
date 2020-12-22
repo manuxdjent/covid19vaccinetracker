@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.css';
+
+
+h2.MenuHeaderTitle {
+  margin-bottom: 0;
+}
+
+h2.MenuHeaderTitle span:last-child {
+  color: white;
+}
+
+h2.MenuHeaderTitle span:first-child {
+  color: red;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+
+h1.title {
+  margin-top: 20px;
+  color: #001529;
+}
+
+.ant-layout-content {
+  padding: 0 50px;
+}
+
+.header {
+  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,.25), inset 0 -1px 5px rgba(0,0,0,.25);
+}
