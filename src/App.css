@@ -1,6 +1,5 @@
 @import '~antd/dist/antd.css';
 
-
 h2.MenuHeaderTitle {
   margin-bottom: 0;
 }
@@ -10,6 +9,18 @@ h2.MenuHeaderTitle span:last-child {
 }
 
 h2.MenuHeaderTitle span:first-child {
+  color: red;
+}
+
+h4.MenuHeaderTitle {
+  margin-bottom: 0;
+}
+
+h4.MenuHeaderTitle span:last-child {
+  color: white;
+}
+
+h4.MenuHeaderTitle span:first-child {
   color: red;
 }
 

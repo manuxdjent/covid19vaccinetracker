@@ -28,7 +28,7 @@ function VaccinesView() {
       title: 'Institutions',
       dataIndex: 'institutions',
       width: '16.66%',
-      responsive: ['md', 'lg'],
+      responsive: ['lg'],
       render: (institutions: Array<string>) => {
         return institutions?.map((institution) => (
           cellRender(institution)
@@ -39,7 +39,7 @@ function VaccinesView() {
       title: 'Mechanism',
       dataIndex: 'mechanism',
       width: '16.66%',
-      responsive: ['md', 'lg'],
+      responsive: ['lg'],
       render: (mechanism: string) => cellRender(mechanism)
     },
     {
