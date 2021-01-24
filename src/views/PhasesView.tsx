@@ -1,24 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useGetPhases } from '../api/hooks/use-queries'
-import { Layout, Row, Col, Card, Skeleton, Typography } from 'antd'
+import { Row, Col, Card, Skeleton, Typography } from 'antd'
 import "./styles/PhasesView.css"
 
 function PhasesView() {
   const { phases, loading } = useGetPhases()
   const { Title } = Typography
-
-  const columns: any = [
-    {
-      title: 'Phase',
-      dataIndex: 'phase',
-      width: '16.66%'
-    },
-    {
-      title: 'Candidates',
-      dataIndex: 'candidates',
-      width: '16.66%'
-    }
-  ]
 
   return (
     <>

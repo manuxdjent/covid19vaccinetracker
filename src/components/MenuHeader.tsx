@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col, Typography, Layout, Menu } from 'antd'
+import React from 'react';
+import { Row, Col, Typography, Layout } from 'antd'
 import { Link } from 'react-router-dom';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive'
