@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { Vaccines, Phase } from '../../types/types';
 import { get } from '../fetchers/fetchers';
 
+const MIDDLEWARE_URI = process.env.NODE_ENV ? 'https://vaccinetracker-middleware.herokuapp.com' : 'http://localhost:3000'
+
 export const useGetVaccines = () => {
     const [candidates, setCandidates] = useState<Vaccines>();
     const [loading, setLoading] = useState<boolean>(true);
 
     const getCandidates = async () => {
-        const result = await get<Vaccines>('http://localhost:3000/data');
+        const result = await get<Vaccines>(`${MIDDLEWARE_URI}/data`);
         setCandidates(result)
         setLoading(false)
     }
@@ -24,7 +26,7 @@ export const useGetPhases = () => {
     const [loading, setLoading] = useState<boolean>(true);
 
     const getPhases = async () => {
-        const result = await get<[Phase]>('http://localhost:3000/phases');
+        const result = await get<[Phase]>(`${MIDDLEWARE_URI}/phases`);
         setPhases(result)
         setLoading(false)
     }
