@@ -7,11 +7,11 @@ import {
   Switch
 } from "react-router-dom"
 import MenuHeader from './components/MenuHeader';
-import AboutView from './views/AboutView';
-import DashboardView from './views/DashboardView';
+import About from './components/About';
+import DashboardView from './views/CandidatesView';
 
 function App() {
-  const { Content } = Layout;
+  const { Content, Footer } = Layout;
 
   return (
     <Router>
@@ -20,9 +20,11 @@ function App() {
           <Content>
             <Switch>
               <Route exact path="/" component={DashboardView} />
-              <Route path="/about" component={AboutView} />
             </Switch>
           </Content>
+          <Footer className="footer">
+            <About />
+          </Footer>
       </Layout>
     </Router> 
   );

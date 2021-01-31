@@ -1,9 +1,9 @@
 import React from 'react';
 import { useGetPhases } from '../api/hooks/use-queries'
 import { Row, Col, Card, Skeleton, Typography } from 'antd'
-import "./styles/PhasesView.css"
+import "./styles/Phases.css"
 
-function PhasesView() {
+function Phases() {
   const { phases, loading } = useGetPhases()
   const { Title } = Typography
 
@@ -16,16 +16,17 @@ function PhasesView() {
       </Row>
       <Row>
         { phases?.map((phase) => (
-        <Col key={`${phase.name}col`} xs={24} md={12} lg={8} >
-          <Card key={`${phase.name}card`} title={phase.candidates} className={`phaseCard ${phase.cssClass}`} >
-             { phase.name }
-            <Skeleton loading={loading} active></Skeleton>
-          </Card>
-        </Col>
+          <Col key={`${phase.name}col`} xs={24} md={12} lg={8} >
+            <Skeleton loading={loading} active>
+              <Card key={`${phase.name}card`} title={phase.candidates} className={`phaseCard ${phase.cssClass}`} >
+                { phase.name }
+              </Card>
+            </Skeleton>
+          </Col>
         )) }
       </Row>
     </>
   );
 }
 
-export default PhasesView;
+export default Phases;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography, Layout } from 'antd'
 import { Link } from 'react-router-dom';
-import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive'
 
 function MenuHeader() {
@@ -13,19 +12,14 @@ function MenuHeader() {
 
     return (
         <Header className="header">
-            <Row justify="space-between">
-                <Col style={{ display: 'flex', alignItems: 'center' }}>
+            <Row>
+                <Col>
                     <Title level={isDesktopOrLaptop ? 2 : 4} className="MenuHeaderTitle">
                         <Link to="/">
                             <span>COVID-19</span>
                             <span>VaccineTracker</span> 
                         </Link>
-                    </Title> 
-                </Col>
-                <Col>
-                    <Link to="/about">
-                        <QuestionCircleOutlined style={{ fontSize: '20px', color: 'white' }}/>
-                    </Link>
+                    </Title>
                 </Col>
             </Row>
         </Header>
