@@ -59,3 +59,7 @@ h1.title {
   margin-left: 15px;
   margin-right: 10px;
 }
+
+main.ant-layout-content {
+  min-height: calc(100vh - 299px);
+}
