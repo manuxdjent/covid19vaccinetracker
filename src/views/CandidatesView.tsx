@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import VaccineCandidates from '../components/VaccineCandidates';
 import Phases from '../components/Phases';
 

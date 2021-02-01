@@ -6,7 +6,7 @@ import {
   Route,
   Switch
 } from "react-router-dom"
-import MenuHeader from './components/MenuHeader';
+import MenuHeader from './components/Header';
 import About from './components/About';
 import DashboardView from './views/CandidatesView';
 

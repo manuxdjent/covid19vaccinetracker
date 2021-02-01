@@ -10,7 +10,7 @@ h2.MenuHeaderTitle span:last-child {
 }
 
 h2.MenuHeaderTitle span:first-child {
-  color: red;
+  color: rgba(255, 56, 96, 1);
 }
 
 h4.MenuHeaderTitle {
@@ -21,9 +21,6 @@ h4.MenuHeaderTitle span:last-child {
   color: white;
 }
 
-h4.MenuHeaderTitle span:first-child {
-  color: red;
-}
 
 .site-layout-background {
   background: #fff;
