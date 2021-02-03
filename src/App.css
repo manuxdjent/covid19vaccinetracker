@@ -40,6 +40,10 @@ h2.title {
   color: #001529;
 }
 
+h2.title span.anticon {
+  margin-right: 10px;
+}
+
 .ant-layout-content {
   padding: 0 50px;
 }
@@ -72,6 +76,10 @@ h2.title {
 }
 .footer h1 {
   color: white;
+}
+
+.ant-card-body h1 {
+  font-size: 2.2rem;
 }
 
 .footer blockquote p.developedBy span {

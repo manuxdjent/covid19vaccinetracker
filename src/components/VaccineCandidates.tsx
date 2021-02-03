@@ -7,6 +7,7 @@ import Title from 'antd/lib/typography/Title';
 import { Phase, Vaccine, VaccineDetailsModal } from '../types/types';
 import "./styles/VaccineCandidates.css"
 import { useMediaQuery } from 'react-responsive';
+import { UnorderedListOutlined } from '@ant-design/icons'
 
 function VaccineVaccineCandidates() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -100,7 +101,10 @@ function VaccineVaccineCandidates() {
       </Modal>
       <Row className="sectionTitle">
         <Col>
-          <Title level={2} className="title">Vaccine candidates</Title>        
+          <Title level={2} className="title">
+          <UnorderedListOutlined />
+            Vaccine candidates
+            </Title>        
         </Col>
       </Row>
       <Table columns={columns} loading={loading} rowKey={(vaccine) => { return uniqueId(String(vaccine.candidate))}} dataSource={vaccineCandidates?.data} />

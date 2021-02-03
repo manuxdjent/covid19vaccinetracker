@@ -16,7 +16,7 @@ function MenuHeader() {
                 <Col>
                     <Title level={isDesktopOrLaptop ? 2 : 4} className="MenuHeaderTitle">
                         <Link to="/">
-                            <span>COVID-19</span>
+                            <span>COVID-19 </span>
                             <span>VaccineTracker</span> 
                         </Link>
                     </Title>
