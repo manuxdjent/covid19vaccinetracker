@@ -6,13 +6,18 @@ import ParseEntities from 'parse-entities'
 import Title from 'antd/lib/typography/Title';
 import { Phase, Vaccine, VaccineDetailsModal } from '../types/types';
 import "./styles/VaccineCandidates.css"
+import { useMediaQuery } from 'react-responsive';
 
 function VaccineVaccineCandidates() {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 480px)'
+  })
   const [visibleModal, setVisibleModal] = useState(false);
   const [vaccineDetailsModal, setVaccineDetailsModal] = useState<VaccineDetailsModal>();
   const emptyCellText = 'No information'
   const cellRender = (data: string) => {
-    return data.length ? <span key={uniqueId()}>{data}</span> : <span key={uniqueId()} style={{ color: 'grey' }}>{emptyCellText}</span>
+    return data.length ? <span key={uniqueId()}>{data}</span> :
+    <span key={uniqueId()} style={{ color: 'grey' }}>{emptyCellText}</span>
   }
   const { vaccineCandidates, loading } = useGetVaccineCandidates()
 
@@ -87,10 +92,10 @@ function VaccineVaccineCandidates() {
         title={vaccineDetailsModal?.vaccineName}
         visible={visibleModal}
         onCancel={hideModal}
+        width={isDesktopOrLaptop ? 1200 : 'auto'}
         footer={[ 
           <Button type="primary" key="hide" onClick={hideModal}> OK </Button>
-         ]}
-        width="auto">
+         ]}>
           <p>{vaccineDetailsModal?.vaccineDetails}</p>
       </Modal>
       <Row className="sectionTitle">

@@ -3,16 +3,13 @@ import { Col, Row } from 'antd';
 import { Typography }  from 'antd';
 
 function About() {
-    const { Paragraph, Link, Title } = Typography;
+    const { Paragraph, Link } = Typography;
     return (
         <>
             <Row>
                 <Col>
                     <Paragraph>
                         <blockquote>
-                            <p>
-                            COVID-19VaccineTracker uses an API that provides a big range of detailed information about multiple viruses. From COVID19 global data overviews to city/region specific mobility data, and data on the current outbreak of Influenza.  
-                            </p>
                             <p className="developedBy">
                                 Developed by Manuel Fernández de Ginzo
                                 <span>•</span>
@@ -24,9 +21,6 @@ function About() {
                                     LinkedIn
                                 </Link>
                             </p>
-                            <Link href="https://github.com/disease-sh/API" target="_blank">
-                                Disease-sh API
-                            </Link>
                         </blockquote>
                     </Paragraph>
                 </Col>
