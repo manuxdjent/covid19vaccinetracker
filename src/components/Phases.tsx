@@ -5,20 +5,21 @@ import "./styles/Phases.css"
 
 function Phases() {
   const { phases } = useGetPhases()
-  const { Title } = Typography
+  const { Title, Text } = Typography
 
   return (
     <>
       <Row>
         <Col>
-          <Title className="title">Phases candidates</Title>        
+          <Title level={2} className="title">Phases candidates</Title>        
         </Col>
       </Row>
       <Row>
         { phases?.map((phase) => (
-          <Col key={`${phase.name}col`} xs={24} md={12} lg={8} >
-              <Card key={`${phase.name}card`} title={phase.candidates} className={`phaseCard ${phase.cssClass}`} >
-                { phase.name }
+          <Col key={`${phase.name}col`} xs={24} md={12} lg={4} >
+              <Card title size="small" key={`${phase.name}card`} className={`phaseCard ${phase.cssClass}`} >
+                <Title>{ phase.candidates }</Title>
+                <Text type="secondary">{ phase.name }</Text>
               </Card>
           </Col>
         )) }

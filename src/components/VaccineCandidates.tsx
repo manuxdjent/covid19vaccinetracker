@@ -93,13 +93,13 @@ function VaccineVaccineCandidates() {
         width="auto">
           <p>{vaccineDetailsModal?.vaccineDetails}</p>
       </Modal>
-      <Row>
+      <Row className="sectionTitle">
         <Col>
-          <Title className="title">Vaccine candidates</Title>        
+          <Title level={2} className="title">Vaccine candidates</Title>        
         </Col>
       </Row>
-      <Table columns={columns} loading={loading} rowKey={(vaccine) => { return uniqueId(String(vaccine.candidate))}} dataSource={vaccineCandidates?.data} style={{margin: "20px"}}/>
-      </>
+      <Table columns={columns} loading={loading} rowKey={(vaccine) => { return uniqueId(String(vaccine.candidate))}} dataSource={vaccineCandidates?.data} />
+    </>
   );
 }
 

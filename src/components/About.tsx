@@ -8,11 +8,6 @@ function About() {
         <>
             <Row>
                 <Col>
-                    <Title>About</Title>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
                     <Paragraph>
                         <blockquote>
                             <p>

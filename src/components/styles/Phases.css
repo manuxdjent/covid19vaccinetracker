@@ -1,32 +1,42 @@
 .phaseCard {
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-    margin: 20px;
+    margin: 0 10px 0 20px;
+    text-align: center;
+    border-radius: 10px;
 }
 
-.ant-card-head-title:before {
-    content: '# ';
+.ant-col:nth-child(1) > .phaseCard {
+    margin-left: 0;
 }
 
-.preClinical .ant-card-body {
+.ant-col:last-child > .phaseCard {
+    margin-right: 0;
+}
+
+.ant-card-head {
+    min-height: 28px;
+}
+
+.preClinical .ant-card-head {
     background-color: rgb(255 0 0 / 35%);
 }
 
-.phase1 .ant-card-body {
+.phase1 .ant-card-head {
     background-color: rgb(255 82 0 / 35%);
 }
 
-.phase12 .ant-card-body {
+.phase12 .ant-card-head {
     background-color: rgb(255 153 0 / 35%);
 }
 
-.phase2 .ant-card-body {
+.phase2 .ant-card-head {
     background-color: rgb(251 255 0 / 35%);
 }
 
-.phase23 .ant-card-body {
+.phase23 .ant-card-head {
     background-color: rgb(122 255 0 / 35%);
 }
 
-.phase3 .ant-card-body {
+.phase3 .ant-card-head {
     background-color: rgb(0 255 67 / 35%);
 }
