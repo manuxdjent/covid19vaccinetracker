@@ -20,9 +20,9 @@ function Phases() {
           </Title>        
         </Col>
       </Row>
-      <Row>
+      <Row className="phasesRow">
         { phases?.map((phase) => (
-          <Col key={`${phase.name}col`} xs={24} md={12} lg={4} >
+          <Col key={`${phase.name}col`} xs={11} md={7} lg={3} >
               <Card title size="small" key={`${phase.name}card`} className={`phaseCard ${phase.cssClass}`} >
                 <CountUp end={Number(phase.candidates)} delay={0} duration={3}>
                   {({countUpRef}) => (

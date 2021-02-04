@@ -51,18 +51,17 @@ h2.title span.anticon {
 .header {
   display: flex;
   align-items: center;
-  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,.25), inset 0 -1px 5px rgba(0,0,0,.25);
+  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,.25);
 }
 
 .footer {
-  background-color: #001529;
-  box-shadow: 0 -0.25rem 0.25rem rgb(0 0 0 / 25%), inset 0 -1px 5px rgb(0 0 0 / 25%);
+  box-shadow: 0 -0.25rem 0.25rem rgb(0 0 0 / 3%);
   margin-top: 60px;
   padding: 10px 50px;
 }
 
-.footer blockquote {
-  color: white;
+.footer {
+  color: #001529;
 }
 .ant-modal-header {
   background-color: #001529;
@@ -79,12 +78,34 @@ h2.title span.anticon {
 }
 
 .ant-card-body h1 {
-  font-size: 2.2rem;
+  font-size: 3rem;
 }
 
-.footer blockquote p.developedBy span {
-  margin-left: 15px;
-  margin-right: 10px;
+.footer p.developedBy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p.developedBy {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.footer span.anticon {
+    margin-right: 15px;
+    font-size: 1.1rem;
+    color: #001529;
+}
+
+footer p.developedBy > span {
+  margin-right: 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main.ant-layout-content {
