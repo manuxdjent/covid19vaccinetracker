@@ -109,5 +109,5 @@ footer p.developedBy > span {
 }
 
 main.ant-layout-content {
-  min-height: calc(100vh - 299px);
+  min-height: calc(100vh - 116px);
 }
