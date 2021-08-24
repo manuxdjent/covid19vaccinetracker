@@ -1,10 +1,9 @@
-import React from 'react';
-import { useGetPhases } from '../api/hooks/use-queries'
+import React from 'react'
+import { useGetPhases } from '../../api/hooks/use-queries'
 import { Row, Col, Card, Typography } from 'antd'
 import { LineChartOutlined } from '@ant-design/icons'
-import "./styles/Phases.css"
-import CountUp from 'react-countup';
-import { count } from 'console';
+import "./phases.css"
+import CountUp from 'react-countup'
 
 function Phases() {
   const { phases } = useGetPhases()
@@ -12,11 +11,11 @@ function Phases() {
 
   return (
     <>
-      <Row>
+      <Row className="sectionTitle">
         <Col>
           <Title level={2} className="title">
           <LineChartOutlined />
-            Phases candidates
+            Phases
           </Title>        
         </Col>
       </Row>
@@ -36,7 +35,7 @@ function Phases() {
         )) }
       </Row>
     </>
-  );
+  )
 }
 
-export default Phases;
+export default Phases

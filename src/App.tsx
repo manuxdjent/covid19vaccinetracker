@@ -1,33 +1,32 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import { Layout } from 'antd'
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from "react-router-dom"
-import MenuHeader from './components/Header';
-import About from './components/About';
-import DashboardView from './views/CandidatesView';
+import CandidatesView from './views/candidates-view'
+import Footer from './components/footer/footer'
+import Header from './components/header/header'
+
 
 function App() {
-  const { Content, Footer } = Layout;
+  const { Content } = Layout;
 
   return (
     <Router>
       <Layout>
-        <MenuHeader />
+        <Header />
           <Content>
             <Switch>
-              <Route exact path="/" component={DashboardView} />
+              <Route exact path="/" component={CandidatesView} />
             </Switch>
           </Content>
-          <Footer className="footer">
-            <About />
-          </Footer>
+          <Footer />
       </Layout>
     </Router> 
   );
 }
 
-export default App;
+export default App

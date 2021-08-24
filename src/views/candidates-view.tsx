@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import VaccineCandidates from '../components/VaccineCandidates';
-import Phases from '../components/Phases';
+import React from 'react'
+import VaccineCandidates from '../components/vaccines/vaccines'
+import Phases from '../components/phases/phases'
 
 function CandidatesView() {
     return (

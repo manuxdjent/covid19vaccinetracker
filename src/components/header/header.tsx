@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 import { Row, Col, Typography, Layout } from 'antd'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
+import './header.css'
 
-function MenuHeader() {
+function Header() {
     const { Title } = Typography
     const { Header } = Layout
     const isDesktopOrLaptop = useMediaQuery({
@@ -23,7 +24,7 @@ function MenuHeader() {
                 </Col>
             </Row>
         </Header>
-    );
+    )
 }
 
-export default MenuHeader;
+export default Header

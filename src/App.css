@@ -1,38 +1,25 @@
-@import '~antd/dist/antd.css';
-
-h2.MenuHeaderTitle {
-  margin-bottom: 0;
-  margin-right: 20px;
-}
-
-h2.MenuHeaderTitle span:last-child {
-  color: white;
-}
-
-h2.MenuHeaderTitle span:first-child {
-  color: rgba(255, 56, 96, 1);
-}
-
-h4.MenuHeaderTitle {
-  margin-bottom: 0;
-}
-
-h4.MenuHeaderTitle span:last-child {
-  color: white;
-}
+@import "~antd/dist/antd.css";
 
 .ant-table-cell {
   font-size: 1rem;
 }
 
+.sectionTitle .ant-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .sectionTitle {
-    margin-top: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-layout-background {
   background: #fff;
 }
-
 
 h2.title {
   margin-top: 30px;
@@ -46,12 +33,6 @@ h2.title span.anticon {
 
 .ant-layout-content {
   padding: 0 50px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,.25);
 }
 
 .footer {
@@ -93,9 +74,9 @@ h2.title span.anticon {
 }
 
 .footer span.anticon {
-    margin-right: 15px;
-    font-size: 1.1rem;
-    color: #001529;
+  margin-right: 15px;
+  font-size: 1.1rem;
+  color: #001529;
 }
 
 footer p.developedBy > span {
@@ -110,4 +91,16 @@ footer p.developedBy > span {
 
 main.ant-layout-content {
   min-height: calc(100vh - 116px);
+}
+
+.header {
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
 }
