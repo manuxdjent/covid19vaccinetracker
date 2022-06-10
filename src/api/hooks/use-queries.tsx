@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Vaccines, Phase } from '../../models/common.model'
 import { get } from '../fetchers/fetchers'
 
-const MIDDLEWARE_URL = process.env.NODE_ENV === 'production' ? 'https://vaccinetracker-middleware2.herokuapp.com' : 'http://localhost:3000'
+const MIDDLEWARE_URL = process.env.NODE_ENV === 'production' ? 'https://vaccine-tracker-middleware.onrender.com' : 'http://localhost:3000'
 
 export const useGetVaccineCandidates = () => {
     const [vaccineCandidates, setCandidates] = useState<Vaccines>()
