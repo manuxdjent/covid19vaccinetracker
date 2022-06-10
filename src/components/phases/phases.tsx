@@ -22,7 +22,7 @@ function Phases() {
       <Row className="phasesRow">
         { phases?.map((phase) => (
           <Col key={`${phase.name}col`} xs={11} md={7} lg={3} >
-              <Card title size="small" key={`${phase.name}card`} className={`phaseCard ${phase.cssClass}`} >
+              <Card title size="small" key={`${phase.name}card`} style={{backgroundColor: phase.color}}>
                 <CountUp end={Number(phase.candidates)} delay={0} duration={3}>
                   {({countUpRef}) => (
                     <h1 ref={countUpRef}></h1>

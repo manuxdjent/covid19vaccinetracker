@@ -19,8 +19,7 @@ export interface Phase {
     name: string,
     code: string,
     candidates?: string,
-    color: string,
-    cssClass?: string
+    color: string
 }
 
 export interface VaccineDetailsModal {
