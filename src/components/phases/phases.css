@@ -16,7 +16,7 @@
     }
 }
 
-.phaseCard {
+.phase-card {
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
     text-align: center;
     border-radius: 10px;
@@ -25,30 +25,7 @@
 .phasesRow {
     justify-content: space-between;
 }
+
 .ant-card-head {
     min-height: 28px;
-}
-
-.preClinical .ant-card-head {
-    background-color: rgb(255 0 0 / 35%);
-}
-
-.phase1 .ant-card-head {
-    background-color: rgb(255 82 0 / 35%);
-}
-
-.phase12 .ant-card-head {
-    background-color: rgb(255 153 0 / 35%);
-}
-
-.phase2 .ant-card-head {
-    background-color: rgb(251 255 0 / 35%);
-}
-
-.phase23 .ant-card-head {
-    background-color: rgb(122 255 0 / 35%);
-}
-
-.phase3 .ant-card-head {
-    background-color: rgb(0 255 67 / 35%);
 }

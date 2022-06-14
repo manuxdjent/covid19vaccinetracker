@@ -1,21 +1,19 @@
-h2.MenuHeaderTitle {
+.header .menu-header-title {
   margin-bottom: 0;
-  margin-right: 20px;
 }
 
-h2.MenuHeaderTitle span:last-child {
+.header .menu-header-title span:last-child {
   color: white;
 }
 
-h2.MenuHeaderTitle span:first-child,
-h4.MenuHeaderTitle span:first-child {
+.header .menu-header-title span:first-child {
   color: rgba(255, 56, 96, 1);
 }
 
-h4.MenuHeaderTitle {
+.header .menu-header-title {
   margin-bottom: 0;
 }
 
-h4.MenuHeaderTitle span:last-child {
+.header .menu-header-title span:last-child {
   color: white;
 }
