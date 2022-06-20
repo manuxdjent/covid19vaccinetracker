@@ -26,3 +26,7 @@ export interface VaccineDetailsModal {
     vaccineName: string,
     vaccineDetails: string
   }
+
+export interface Filter {
+    [key: string]: string | Object
+  }

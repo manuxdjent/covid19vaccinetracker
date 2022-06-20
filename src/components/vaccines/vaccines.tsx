@@ -1,22 +1,45 @@
-import React, { createRef, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import {
   useGetPhases,
   useGetVaccineCandidates,
 } from "../../api/hooks/use-queries";
 import { Table, Button, Modal, Row, Col, Tag, Input, Space } from "antd";
-import { uniqueId } from "lodash";
+import { mergeWith, uniqueId } from "lodash";
 import ParseEntities from "parse-entities";
 import Title from "antd/lib/typography/Title";
-import { Phase, Vaccine, VaccineDetailsModal } from "../../models/common.model";
+import {
+  Filter,
+  Phase,
+  Vaccine,
+  VaccineDetailsModal,
+} from "../../models/common.model";
 import "./vaccines.css";
-import { useMediaQuery } from "react-responsive";
 import { SearchOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
+import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 
-function VaccineVaccineCandidates() {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 480px)",
-  });
+interface VaccinesComponentProps {
+  filter?: Filter;
+}
+
+function VaccineCandidates({ filter }: VaccinesComponentProps) {
+  const screens = useBreakpoint();
+  const isMobile = screens.xs;
+
+  const [internalFilter, setInternalFilter] = useState<Filter>();
+
+  useEffect(() => {
+    if (filter) {
+      setInternalFilter((internalFilter) => {
+        const finalFilter = mergeWith({}, filter, internalFilter, (a, b) => {
+          if (Array.isArray(a)) {
+            return b.concat(a)
+          }
+        })
+        return finalFilter;
+      });
+    }
+  }, [filter]);
 
   const [visibleModal, setVisibleModal] = useState(false);
   const [vaccineDetailsModal, setVaccineDetailsModal] =
@@ -193,17 +216,20 @@ function VaccineVaccineCandidates() {
       key: "trialPhase",
       width: "10%",
       filters: mapPhasesToFilter,
+      filteredValue: internalFilter?.trialPhase
+        ? internalFilter.trialPhase
+        : null,
       onFilter: (value: any, record: any) => {
         return record.trialPhase.name === value;
       },
       render: (vaccinePhase: Phase) => (
         <Tag
-          color={vaccinePhase.color}
-          key={`${vaccinePhase.name}tag`}
+          color={vaccinePhase?.color}
+          key={`${vaccinePhase?.name}tag`}
           className="phaseTag"
         >
           {" "}
-          {vaccinePhase.name.toUpperCase()}{" "}
+          {vaccinePhase?.name.toUpperCase()}{" "}
         </Tag>
       ),
     },
@@ -230,7 +256,7 @@ function VaccineVaccineCandidates() {
         title={vaccineDetailsModal?.vaccineName}
         visible={visibleModal}
         onCancel={hideModal}
-        width={isDesktopOrLaptop ? 1200 : "auto"}
+        width={!isMobile ? 1200 : "auto"}
         footer={[
           <Button type="primary" key="hide" onClick={hideModal}>
             {" "}
@@ -255,9 +281,18 @@ function VaccineVaccineCandidates() {
           return uniqueId(String(vaccine.candidate));
         }}
         dataSource={vaccineCandidates?.data}
+        onChange={(pagination: any, filters: any, sorter: any, extra: any) => {
+          if (extra.action === "filter") {
+            setInternalFilter({
+              ...internalFilter,
+              trialPhase: filters.trialPhase,
+              candidate: filters.candidate,
+            });
+          }
+        }}
       />
     </>
   );
 }
 
-export default VaccineVaccineCandidates;
+export default VaccineCandidates;
