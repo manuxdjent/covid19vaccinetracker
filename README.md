@@ -5,7 +5,8 @@
   Covid19 - Vaccine Tracker
 </h1>
 <p align="center">
-  COVID-19 vaccine trial data from raps.org, updated every 24 hours
+  COVID-19 vaccine trial data from raps.org, updated every 24 hours.</br>
+  <a href="https://covidvaccinetracker.vercel.app/">covidvaccinetracker.vercel.app</a>
 </p>
 
 ## 🚀 Available Scripts
