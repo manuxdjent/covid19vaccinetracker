@@ -1,3 +1,5 @@
+import { Key } from "antd/lib/table/interface"
+
 export interface Vaccine {
     id: string,
     candidate: string,
@@ -28,5 +30,5 @@ export interface VaccineDetailsModal {
   }
 
 export interface Filter {
-    [key: string]: string | Object
+    [key: string]: React.Key[] | null | undefined
   }

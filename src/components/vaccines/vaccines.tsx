@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, ReactNode, useEffect, useState } from "react";
 import {
   useGetPhases,
   useGetVaccineCandidates,
@@ -17,6 +17,8 @@ import "./vaccines.css";
 import { SearchOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
+import { ColumnType } from "antd/lib/table";
+import { FilterDropdownProps } from "antd/lib/table/interface";
 
 interface VaccinesComponentProps {
   filter?: Filter;
@@ -33,7 +35,7 @@ function VaccineCandidates({ filter }: VaccinesComponentProps) {
       setInternalFilter((internalFilter) => {
         const finalFilter = mergeWith({}, filter, internalFilter, (a, b) => {
           if (Array.isArray(a)) {
-            return b.concat(a)
+            return b ? b.concat(a) : a
           }
         })
         return finalFilter;
@@ -97,7 +99,15 @@ function VaccineCandidates({ filter }: VaccinesComponentProps) {
     setVisibleModal(true);
   };
 
-  const getColumnSearchProps = (dataIndex: string) => ({
+  interface test {
+    filterDropdown: (props: FilterDropdownProps) => ReactNode
+    filterIcon: (filtered: boolean) => ReactNode
+    onFilter: (value: string | number | boolean, record: any) => boolean;
+    onFilterDropdownVisibleChange: (visible: boolean) => void
+    render: (text: string) => ReactNode
+  }
+
+  const getColumnSearchProps = (dataIndex: string): test => ({
     filterDropdown: ({
       setSelectedKeys,
       selectedKeys,
@@ -138,13 +148,15 @@ function VaccineCandidates({ filter }: VaccinesComponentProps) {
     filterIcon: (filtered: boolean) => (
       <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
     ),
-    onFilter: (value: string, record: any) =>
-      record[dataIndex]
-        ? record[dataIndex]
-            .toString()
-            .toLowerCase()
-            .includes(value.toLowerCase())
-        : "",
+    onFilter: (value: string | number | boolean, record: any) => {
+      const stringValue = value as string
+      return record[dataIndex]
+      ? record[dataIndex]
+          .toString()
+          .toLowerCase()
+          .includes(stringValue.toLowerCase())
+      : ""
+    },
     onFilterDropdownVisibleChange: (visible: boolean) => {
       if (visible) {
         setTimeout(() => searchInputRef.current?.select(), 100);
@@ -164,15 +176,10 @@ function VaccineCandidates({ filter }: VaccinesComponentProps) {
   });
 
   const alphabeticalSortingFunction = (a: Vaccine, b: Vaccine) => {
-    if (a.candidate < b.candidate) {
-      return -1;
-    }
-    if (b.candidate > a.candidate) {
-      return 1;
-    }
+    return a.candidate < b.candidate ? -1 : 1
   };
 
-  const columns: any = [
+  const columns: ColumnType<Vaccine>[] = [
     {
       title: "Name",
       dataIndex: "candidate",
